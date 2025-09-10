@@ -1,56 +1,159 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, Users, Music, Utensils, Star, ArrowUp } from "lucide-react"
 
 export default function FestivalWireframe() {
+  const [scrollY, setScrollY] = useState(0)
+  const sidebarFontSize = '24px'
+  const sidebarWidth = '389px' // w-64 = 256px
+  const navItemSpacing = '4px' // space-y-4 = 16px
+  const logoHeight = '131px' // h-24 = 96px
+  const logoBottomMargin = '64px' // mb-8 = 32px
+  const characterHeight = '430px' // キャラクター画像のサイズ（300px → 500px、はみ出しOK）
+  const characterTopMargin = '32px' // キャラクター上の余白
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen flex">
-      <aside className="fixed left-0 top-0 z-50 h-full w-64 border-r">
+      <aside 
+        className="fixed left-0 top-0 z-50 h-full border-r bg-[url('/sideber/sidebar-bg.png')] bg-no-repeat"
+        style={{
+          width: sidebarWidth,
+          backgroundPosition: `center ${Math.max(0, Math.min(100, 0 + scrollY * 0.05))}%`,
+          backgroundSize: '100% auto'
+        }}
+      >
         <div className="flex flex-col h-full p-6">
-          <div className="flex items-center space-x-2 mb-8">
-            <div className="h-8 w-8 rounded-full border"></div>
-            <span className="text-xl font-bold">まちか</span>
+          <div 
+            className="flex justify-center items-center" 
+            style={{ marginBottom: logoBottomMargin }}
+          >
+            <img 
+              src="/sideber/sidebar-logo.png" 
+              alt="まちナかぶんかさい ロゴ" 
+              style={{ height: logoHeight }}
+            />
           </div>
 
-          <nav className="flex flex-col space-y-4 flex-1">
+          <nav className="flex flex-col flex-1">
             <a
               href="#schedule"
-              className="text-sm font-medium py-2 px-3 border rounded-md"
+              className="py-2 px-3 rounded-md"
+              style={{
+                color: '#FFF',
+                fontFamily: '"Noto Sans JP"',
+                fontSize: sidebarFontSize,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+                marginBottom: navItemSpacing
+              }}
             >
               開催日程
             </a>
             <a
               href="#about"
-              className="text-sm font-medium py-2 px-3 border rounded-md"
+              className="py-2 px-3 rounded-md"
+              style={{
+                color: '#FFF',
+                fontFamily: '"Noto Sans JP"',
+                fontSize: sidebarFontSize,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+                marginBottom: navItemSpacing
+              }}
             >
               まちナかぶんかさいって?
             </a>
             <a
               href="#program"
-              className="text-sm font-medium py-2 px-3 border rounded-md"
+              className="py-2 px-3 rounded-md"
+              style={{
+                color: '#FFF',
+                fontFamily: '"Noto Sans JP"',
+                fontSize: sidebarFontSize,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+                marginBottom: navItemSpacing
+              }}
             >
               プログラム
             </a>
             <a
               href="#sponsors"
-              className="text-sm font-medium py-2 px-3 border rounded-md"
+              className="py-2 px-3 rounded-md"
+              style={{
+                color: '#FFF',
+                fontFamily: '"Noto Sans JP"',
+                fontSize: sidebarFontSize,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+                marginBottom: navItemSpacing
+              }}
             >
               協賛一覧
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium py-2 px-3 border rounded-md"
+              className="py-2 px-3 rounded-md"
+              style={{
+                color: '#FFF',
+                fontFamily: '"Noto Sans JP"',
+                fontSize: sidebarFontSize,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+                marginBottom: '0' // 最後の要素はマージン不要
+              }}
             >
               お問い合わせ
             </a>
           </nav>
+          
+          {/* キャラクター画像 */}
+          <div 
+            style={{ 
+              marginTop: characterTopMargin,
+              marginLeft: '-80px', // 左に80px移動してサイドバーから大きくはみ出す
+              display: 'flex',
+              justifyContent: 'flex-start', // 左寄せ
+              overflow: 'visible' // はみ出しを許可
+            }}
+          >
+            <img 
+              src="/sideber/sidebar-charactor.png" 
+              alt="まちナかぶんかさい キャラクター" 
+              style={{ 
+                height: characterHeight,
+                width: 'auto' // 縦横比を維持
+              }}
+            />
+          </div>
         </div>
       </aside>
 
-      <main className="flex-1 ml-64">
+      <main 
+        className="flex-1 bg-[url('/top-bg/top-bg.png')] bg-cover bg-no-repeat" 
+        style={{ 
+          marginLeft: sidebarWidth,
+          backgroundPosition: `center ${Math.max(0, Math.min(100, 0 - scrollY * 0.03))}%`
+        }}
+      >
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 border-b">
           <div className="container px-4">
