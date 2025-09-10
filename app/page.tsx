@@ -147,7 +147,13 @@ export default function FestivalWireframe() {
         </div>
       </aside>
 
-      <main className="flex-1" style={{ marginLeft: sidebarWidth }}>
+      <main 
+        className="flex-1 bg-[url('/top-bg/top-bg.png')] bg-cover bg-no-repeat" 
+        style={{ 
+          marginLeft: sidebarWidth,
+          backgroundPosition: `center ${Math.max(0, Math.min(100, 0 - scrollY * 0.03))}%`
+        }}
+      >
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 border-b">
           <div className="container px-4">
