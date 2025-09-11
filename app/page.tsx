@@ -559,7 +559,7 @@ export default function FestivalWireframe() {
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 hover:scale-105 transition-transform duration-200"
+        className="fixed bottom-8 z-40 hover:scale-105 transition-transform duration-200 left-1/2 lg:left-[calc(50%+194.5px)] transform -translate-x-1/2"
         aria-label="ページトップへ"
       >
         <Image
