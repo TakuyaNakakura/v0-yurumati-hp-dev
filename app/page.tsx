@@ -155,7 +155,7 @@ export default function FestivalWireframe() {
         }}
       >
         {/* Hero Section */}
-        <section className="relative w-full">
+        <section className="relative w-full mb-32">
           <img 
             src="/hero-section/hero-image.png" 
             alt="Hero" 
@@ -165,66 +165,67 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Event Schedule Section */}
-        <section id="schedule" className="py-20 border-b">
-          <div className="container px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">開催日程</h2>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* 日時・会場情報 */}
-                <div className="space-y-6">
-                  <div className="border rounded-lg p-6">
-                    <div className="flex items-center gap-2 text-lg font-semibold mb-4">
-                      <Calendar className="h-6 w-6" />
-                      開催日
-                    </div>
-                    <div className="text-3xl font-bold mb-2">2025年9月27日</div>
-                    <div className="text-lg">土曜日</div>
-                  </div>
-                  
-                  <div className="border rounded-lg p-6">
-                    <div className="flex items-center gap-2 text-lg font-semibold mb-4">
-                      <Clock className="h-6 w-6" />
-                      開催時間
-                    </div>
-                    <div className="text-2xl font-bold">16:00 ~ 21:00</div>
-                  </div>
-                  
-                  <div className="border rounded-lg p-6">
-                    <div className="flex items-center gap-2 text-lg font-semibold mb-4">
-                      <MapPin className="h-6 w-6" />
-                      会場
-                    </div>
-                    <div className="text-2xl font-bold">大光銀行駐車場</div>
-                    <div className="text-sm mt-2">長岡市内</div>
+        <section 
+          id="schedule" 
+          className="relative mb-16 mt-32"
+        >
+          <div 
+            className="w-full bg-[url('/event-schedule/event-schedule-bg.png')] bg-cover bg-center bg-no-repeat"
+            style={{ 
+              minHeight: 'auto',
+              aspectRatio: 'auto'
+            }}
+          >
+            <img 
+              src="/event-schedule/event-schedule-bg.png" 
+              alt="Event Schedule Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block' }}
+            />
+            <div className="absolute inset-0 py-20 flex justify-center items-center">
+              <div className="w-full max-w-[892px] h-auto md:h-[642px] relative rounded-[20px] overflow-hidden mx-4">
+                {/* 2025年の表示 */}
+                <div className="absolute top-[40px] left-4 md:left-[100px] text-white text-4xl md:text-7xl font-semibold font-['Source_Serif_Pro']">2025</div>
+                
+                {/* 日付の表示 */}
+                <div className="absolute top-[80px] md:top-[90px] left-1/2 transform -translate-x-1/2 flex items-baseline gap-1 md:gap-2 my-4 md:my-8">
+                  <div className="text-white text-5xl md:text-9xl font-semibold font-['Source_Serif_Pro']">9</div>
+                  <div className="text-white text-5xl md:text-9xl font-semibold font-['Source_Serif_Pro']">.</div>
+                  <div className="text-white text-5xl md:text-9xl font-semibold font-['Source_Serif_Pro']">27</div>
+                  <div className="w-8 h-8 md:w-16 md:h-16 ml-1 md:ml-2 rounded-full border-2 border-white flex items-center justify-center">
+                    <div className="text-white text-lg md:text-2xl font-black font-['Zen_Old_Mincho']">土</div>
                   </div>
                 </div>
                 
-                {/* アクセス・その他情報 */}
-                <div className="space-y-6">
-                  <div className="border rounded-lg p-6">
-                    <div className="flex items-center gap-2 text-lg font-semibold mb-4">
-                      <Users className="h-6 w-6" />
-                      参加費
+                {/* 時間の表示 */}
+                <div className="absolute top-[160px] md:top-[250px] left-1/2 transform -translate-x-1/2 flex items-center gap-2 md:gap-4 my-3 md:my-6">
+                  <div className="text-white text-2xl md:text-5xl font-semibold font-['Source_Serif_Pro']">16:00</div>
+                  <div className="text-white text-2xl md:text-5xl font-semibold font-['Source_Serif_Pro']">~</div>
+                  <div className="text-white text-2xl md:text-5xl font-semibold font-['Source_Serif_Pro']">21:00</div>
+                </div>
+                
+                {/* 会場図と説明の2段組 */}
+                <div className="left-4 md:left-[70px] top-[220px] md:top-[370px] absolute w-[calc(100%-2rem)] md:w-[700px]">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-white">
+                    {/* 左列 - 会場図 */}
+                    <div>
+                      <div className="flex items-center gap-2 text-base md:text-lg font-semibold font-['Noto_Sans_JP'] mb-2">
+                        <img src="/event-schedule/map-icon.png" alt="Map Icon" className="w-4 h-4 md:w-6 md:h-6" />
+                        会場図
+                      </div>
+                      <div className="w-full h-24 md:h-32 bg-zinc-300 rounded" />
                     </div>
-                    <div className="text-2xl font-bold">無料</div>
-                    <div className="text-sm mt-2">どなたでもお気軽にご参加ください</div>
-                  </div>
-                  
-                  <div className="border rounded-lg p-6">
-                    <div className="text-lg font-semibold mb-4">アクセス</div>
-                    <div className="space-y-2 text-sm">
-                      <p>• JR長岡駅から徒歩約15分</p>
-                      <p>• 駐車場あり（台数限定）</p>
-                      <p>• 公共交通機関のご利用をお勧めします</p>
-                    </div>
-                  </div>
-                  
-                  <div className="border rounded-lg p-6">
-                    <div className="text-lg font-semibold mb-4">注意事項</div>
-                    <div className="space-y-2 text-sm">
-                      <p>• 雨天決行（荒天時は中止の場合あり）</p>
-                      <p>• 当日の詳細は公式SNSでお知らせします</p>
+                    
+                    {/* 右列 - イベント説明 */}
+                    <div className="mt-4 md:mt-0">
+                      <div className="text-white text-lg md:text-1xl font-normal font-['Noto_Sans_JP']">
+                        ・ゲリラお笑いライブ<br/>
+                        ・ディスコパーティー<br/>
+                        ・ハンドメイド出店<br/>
+                        など楽しいイベントが盛りだくさん！<br/><br/>
+                        どなたでもお気軽に、<br/>
+                        ふらっとお立ち寄りください！
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -234,7 +235,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 border-b">
+        <section id="about" className="py-20 border-b mb-16">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">まちナかぶんかさいって?</h2>
@@ -285,7 +286,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Program Section */}
-        <section id="program" className="py-20 border-b">
+        <section id="program" className="py-20 border-b mb-16">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">プログラム</h2>
@@ -355,7 +356,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors" className="py-20 border-b">
+        <section id="sponsors" className="py-20 border-b mb-16">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-12">ご協賛いただいた企業様</h2>
@@ -379,7 +380,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 border-b">
+        <section id="contact" className="py-20 border-b mb-16">
           <div className="container px-4">
             <div className="max-w-2xl mx-auto text-center space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">お問い合わせ</h2>
@@ -410,7 +411,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t py-12">
+        <footer className="border-t py-12 mt-16">
           <div className="container px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center space-x-2">
