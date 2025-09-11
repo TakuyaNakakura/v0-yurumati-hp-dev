@@ -576,10 +576,16 @@ export default function FestivalWireframe() {
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-5 md:right-5 lg:bottom-6 lg:right-6 z-40 rounded-full border h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex items-center justify-center bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
+        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 hover:scale-105 transition-transform duration-200"
         aria-label="ページトップへ"
       >
-        <ArrowUp className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+        <Image
+          src="/page-top-button/page-top-button.png"
+          alt="ページトップへ"
+          width={128}
+          height={128}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
+        />
       </button>
     </div>
   )
