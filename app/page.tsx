@@ -30,6 +30,23 @@ export default function FestivalWireframe() {
     if (windowWidth < 768) return '48px'
     return '64px'
   }
+
+  // セクション高さを背景画像に合わせて計算
+  const getHeroHeight = () => {
+    if (windowWidth < 640) return '300px'
+    if (windowWidth < 768) return '400px'
+    if (windowWidth < 1024) return '500px'
+    if (windowWidth < 1280) return '600px'
+    return '700px'
+  }
+
+  const getEventScheduleHeight = () => {
+    if (windowWidth < 640) return '500px'
+    if (windowWidth < 768) return '600px'
+    if (windowWidth < 1024) return '700px'
+    if (windowWidth < 1280) return '800px'
+    return '900px'
+  }
   
   const sidebarWidth = '389px'
   const navItemSpacing = '4px'
@@ -222,21 +239,27 @@ export default function FestivalWireframe() {
       </aside>
 
       <main 
-        className="flex-1 bg-[url('/top-bg/top-bg.png')] bg-cover bg-no-repeat lg:ml-[389px]" 
+        className="flex-1 bg-[url('/top-bg/top-bg.png')] bg-cover bg-no-repeat min-h-screen lg:ml-[389px]" 
         style={{ 
           backgroundPosition: `center ${Math.max(0, Math.min(100, 0 - scrollY * 0.03))}%`
         }}
       >
         {/* Hero Section */}
-        <section className="relative w-full mb-16 sm:mb-32">
-          <div className="relative w-full h-auto">
+        <section className="relative w-full mb-24 sm:mb-32 md:mb-40 lg:mb-48">
+          <div 
+            className="relative w-full"
+            style={{ 
+              minHeight: getHeroHeight(),
+              aspectRatio: 'auto'
+            }}
+          >
             <Image 
               src="/hero-section/hero-image.png" 
               alt="Hero" 
               width={1920}
               height={1080}
-              className="w-full h-auto block"
-              style={{ maxWidth: '100%', height: 'auto' }}
+              className="w-full h-auto"
+              style={{ objectFit: 'contain' }}
               priority
             />
           </div>
@@ -245,20 +268,27 @@ export default function FestivalWireframe() {
         {/* Event Schedule Section */}
         <section 
           id="schedule" 
-          className="relative mb-8 sm:mb-12 md:mb-16 lg:mb-20 mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-32"
+          className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40 mt-16 sm:mt-20 md:mt-24 lg:mt-32 xl:mt-40"
         >
           <div 
-            className="w-full bg-[url('/event-schedule/event-schedule-bg.png')] bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
+            className="w-full bg-[url('/event-schedule/event-schedule-bg.png')] bg-contain bg-center bg-no-repeat relative"
+            style={{ 
+              minHeight: getEventScheduleHeight()
+            }}
           >
-            <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
-              <div className="max-w-4xl mx-auto text-center">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="max-w-4xl mx-auto text-center px-4"
+                style={{
+                  transform: 'translateY(-5%)'
+                }}
+              >
                 {/* 2025年の表示 */}
-                <div className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold font-['Source_Serif_Pro'] mb-4 sm:mb-6 md:mb-8">
+                <div className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold font-['Source_Serif_Pro'] mb-4 sm:mb-6 md:mb-4 text-left ml-4 sm:ml-6 md:ml-8 lg:ml-16">
                   2025
                 </div>
                 
                 {/* 日付の表示 */}
-                <div className="flex justify-center items-baseline gap-1 sm:gap-2 md:gap-3 mb-4 sm:mb-6 md:mb-8">
+                <div className="flex justify-center items-baseline gap-1 sm:gap-2 md:gap-3 mb-4 sm:mb-6 md:mb-4">
                   <div className="text-white text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold font-['Source_Serif_Pro']">9</div>
                   <div className="text-white text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold font-['Source_Serif_Pro']">.</div>
                   <div className="text-white text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold font-['Source_Serif_Pro']">27</div>
@@ -268,7 +298,7 @@ export default function FestivalWireframe() {
                 </div>
                 
                 {/* 時間の表示 */}
-                <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 md:mb-16">
+                <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-6 md:mb-6">
                   <div className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-['Source_Serif_Pro']">16:00</div>
                   <div className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-['Source_Serif_Pro']">~</div>
                   <div className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-['Source_Serif_Pro']">21:00</div>
@@ -278,7 +308,7 @@ export default function FestivalWireframe() {
                 <div className="max-w-3xl mx-auto">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-white">
                     {/* 左列 - 会場図 */}
-                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 border border-white/20">
+                    <div className="rounded-lg p-3 sm:p-0 md:p-2">
                       <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg font-semibold font-['Noto_Sans_JP'] mb-3 sm:mb-4">
                         <div className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
                           <Image 
@@ -294,8 +324,8 @@ export default function FestivalWireframe() {
                     </div>
                     
                     {/* 右列 - イベント説明 */}
-                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 border border-white/20">
-                      <div className="text-white text-sm sm:text-base md:text-lg font-normal font-['Noto_Sans_JP'] leading-relaxed">
+                    <div className=" rounded-lg p-3 sm:p-0 md:p-2">
+                      <div className="text-white text-sm sm:text-base md:text-lg font-normal font-['Noto_Sans_JP'] leading-relaxed text-left">
                         <div className="space-y-1 sm:space-y-2">
                           <div>・ゲリラお笑いライブ</div>
                           <div>・ディスコパーティー</div>
@@ -318,7 +348,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 border-b mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+        <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">まちナかぶんかさいって?</h2>
@@ -369,7 +399,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Program Section */}
-        <section id="program" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 border-b mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+        <section id="program" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">プログラム</h2>
@@ -439,7 +469,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 border-b mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+        <section id="sponsors" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">ご協賛いただいた企業様</h2>
@@ -463,7 +493,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 border-b mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">お問い合わせ</h2>
@@ -494,7 +524,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t py-4 sm:py-6 md:py-8 lg:py-12 mt-6 sm:mt-8 md:mt-12 lg:mt-16">
+        <footer className="border-t py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-4">
               <div className="flex items-center space-x-1 sm:space-x-2">
