@@ -469,7 +469,7 @@ export default function FestivalWireframe() {
               <div className="w-[80%] max-w-none mx-auto px-4">
                 {/* コンテンツをここに追加 */}
                 <div className="text-center">
-                  <h2 className="text-white text-4xl md:text-6xl font-bold mb-8">今年のテーマ</h2>
+                  {/* <h2 className="text-white text-4xl md:text-6xl font-bold mb-8">今年のテーマ</h2> */}
                 </div>
               </div>
             </div>
@@ -477,69 +477,26 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Program Section */}
-        <section id="program" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">プログラム</h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">16:00 - 18:00</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">オープニング</span>
-                      <p className="text-xs sm:text-sm md:text-base">会場オープン・マルシェ開始</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">18:00 - 19:30</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">メインイベント</span>
-                      <p className="text-xs sm:text-sm md:text-base">ゲリラお笑いライブ・パフォーマンス</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">19:30 - 21:00</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">ナイトイベント</span>
-                      <p className="text-xs sm:text-sm md:text-base">ディスコパーティー・同窓会</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <MapPin className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">会場図</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="aspect-video border rounded flex items-center justify-center">
-                      <p className="text-xs sm:text-sm md:text-base">[Venue Map Placeholder]</p>
-                    </div>
-                  </div>
+        <section id="program" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/program/program-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/program/program-bg.png" 
+              alt="Program Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  {/* プログラム内容をここに追加する予定 */}
                 </div>
               </div>
             </div>
