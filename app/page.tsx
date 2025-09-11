@@ -211,7 +211,7 @@ export default function FestivalWireframe() {
                     <div>
                       <div className="flex items-center gap-2 text-base md:text-lg font-semibold font-['Noto_Sans_JP'] mb-2">
                         <img src="/event-schedule/map-icon.png" alt="Map Icon" className="w-4 h-4 md:w-6 md:h-6" />
-                        会場図
+                        大光銀行駐車場
                       </div>
                       <div className="w-full h-24 md:h-32 bg-zinc-300 rounded" />
                     </div>
