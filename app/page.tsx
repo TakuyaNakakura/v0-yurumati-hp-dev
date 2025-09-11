@@ -7,6 +7,73 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, Users, Music, Utensils, Star, ArrowUp, Menu, X } from "lucide-react"
 
+// AboutCarousel コンポーネント
+const AboutCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const carouselImages = [
+    "/about/carousel-1.png",
+    "/about/carousel-2.png",
+    "/about/carousel-3.png",
+    "/about/carousel-4.png"
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+    }, 3000) // 3秒ごとに切り替え
+
+    return () => clearInterval(interval)
+  }, [carouselImages.length])
+
+  return (
+    <div className="relative w-full mx-auto">
+      {/* テキスト部分 */}
+      <div className="text-center mb-32 mt-48 mx-4">
+        <div className="text-white text-3xl font-normal font-['Source_Serif_Pro'] leading-relaxed">
+          『まちナかぶんかさい』は、<br/>
+          毎年夏に、長岡市の大学生が主体となって開催されるイベントです。<br/>
+        </div>
+      </div>
+      
+      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl shadow-2xl">
+        {carouselImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`カルーセル画像 ${index + 1}`}
+              fill
+              style={{ objectFit: 'contain' }}
+              className="rounded-xl"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+      </div>
+      
+      {/* インジケーター */}
+      <div className="flex justify-center mt-8 space-x-4">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-6 h-6 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? 'bg-white scale-125 shadow-lg' 
+                : 'bg-white/60 hover:bg-white/80'
+            }`}
+            aria-label={`スライド ${index + 1} を表示`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function FestivalWireframe() {
   const [scrollY, setScrollY] = useState(0)
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -359,51 +426,24 @@ export default function FestivalWireframe() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">まちナかぶんかさいって?</h2>
-
-              <div className="text-left border rounded p-3 sm:p-4 md:p-6 lg:p-8">
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-                  『まちナかぶんかさい』は、毎年夏に、長岡市の大学生が主体となって開催されるイベントです。
-                </p>
-                <div className="mt-3 sm:mt-4 md:mt-6 p-2 sm:p-3 md:p-4 border rounded">
-                  <p className="text-xs sm:text-sm md:text-base italic">資料見てもうちょいいい感じに説明追加</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                <div className="border rounded p-3 sm:p-4 md:p-6 text-center">
-                  <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 border rounded-full mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center">
-                    <Music className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
-                  </div>
-                  <h3 className="font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base lg:text-lg">ゲリラお笑いライブ</h3>
-                  <p className="text-xs sm:text-sm md:text-base">楽しいパフォーマンス</p>
-                </div>
-
-                <div className="border rounded p-3 sm:p-4 md:p-6 text-center">
-                  <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 border rounded-full mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center">
-                    <Star className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
-                  </div>
-                  <h3 className="font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base lg:text-lg">ディスコパーティー</h3>
-                  <p className="text-xs sm:text-sm md:text-base">夜の特別イベント</p>
-                </div>
-
-                <div className="border rounded p-3 sm:p-4 md:p-6 text-center sm:col-span-2 lg:col-span-1">
-                  <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 border rounded-full mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center">
-                    <Utensils className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
-                  </div>
-                  <h3 className="font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base lg:text-lg">ハンドメイド出店</h3>
-                  <p className="text-xs sm:text-sm md:text-base">地域の手作り品</p>
-                </div>
-              </div>
-
-              <div className="text-center px-2">
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-3 sm:mb-4">どなたでもお気軽に、ふらっとお立ち寄りください！</p>
-                <button className="border px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded text-sm sm:text-base md:text-lg lg:text-xl hover:bg-gray-100 transition-colors">
-                  プログラム詳細
-                </button>
+        <section id="about" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/about/about-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/about/about-bg.png" 
+              alt="About Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                <AboutCarousel />
               </div>
             </div>
           </div>
