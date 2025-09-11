@@ -449,6 +449,33 @@ export default function FestivalWireframe() {
           </div>
         </section>
 
+        {/* This Year Theme Section */}
+        <section id="this-year-theme" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/this-year-theme/theme-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/this-year-theme/theme-bg.png" 
+              alt="This Year Theme Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  <h2 className="text-white text-4xl md:text-6xl font-bold mb-8">今年のテーマ</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Program Section */}
         <section id="program" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
