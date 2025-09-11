@@ -320,7 +320,18 @@ export default function FestivalWireframe() {
                         </div>
                         大光銀行駐車場
                       </div>
-                      <div className="w-full h-20 sm:h-24 md:h-28 lg:h-32 bg-zinc-300 rounded border-2 border-white/30" />
+                      <div className="w-full h-20 sm:h-24 md:h-28 lg:h-32 rounded border-2 border-white/30 overflow-hidden">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.8856372488855!2d138.85023816506157!3d37.44791003439853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff5a9fd5bbd7f6f%3A0xb4df88b4991737b9!2z5b6T5qWt5ZOh5bCC55So6aeQ6LuK5aC077yI5aSn5YWJ6YqA6KGMIOacrOW6l--8iQ!5e0!3m2!1sja!2sjp!4v1757573290175!5m2!1sja!2sjp"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="大光銀行駐車場の地図"
+                        />
+                      </div>
                     </div>
                     
                     {/* 右列 - イベント説明 */}
