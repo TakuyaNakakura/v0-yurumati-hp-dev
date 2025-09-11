@@ -1,5 +1,0 @@
-# Google Search Console verification file
-# このファイルは検索エンジンでの表示を改善するために作成されました
-# Google Search Console (https://search.google.com/search-console/) でサイトの所有権確認を行ってください
-
-google-site-verification: google-site-verification=YOUR_VERIFICATION_CODE_HERE
