@@ -533,45 +533,28 @@ export default function FestivalWireframe() {
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">お問い合わせ</h2>
-
-              <div className="border rounded p-3 sm:p-4 md:p-6 lg:p-8">
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl">イベントに関するご質問やお問い合わせは、こちらからお気軽にどうぞ。</p>
-
-                  <button className="border px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded text-sm sm:text-base md:text-lg lg:text-xl w-full hover:bg-gray-100 transition-colors">
-                    お問い合わせページへ
-                  </button>
-
-                  <div className="pt-3 sm:pt-4 md:pt-6 border-t">
-                    <p className="text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4">SNSでも情報を発信しています！</p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 md:gap-4">
-                      <button className="border px-3 sm:px-4 py-2 rounded text-xs sm:text-sm md:text-base lg:text-lg hover:bg-gray-100 transition-colors">
-                        Instagram
-                      </button>
-                      <button className="border px-3 sm:px-4 py-2 rounded text-xs sm:text-sm md:text-base lg:text-lg hover:bg-gray-100 transition-colors">
-                        Twitter
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-full max-w-lg h-20 relative mx-auto mb-8 sm:mb-12 md:mb-16">
+                <div className="w-full h-20 left-0 top-0 absolute flex justify-center items-center text-white text-4xl md:text-5xl lg:text-6xl font-semibold font-['Source_Serif_Pro'] whitespace-nowrap">お問い合わせ</div>
               </div>
+
+              <a 
+                href="https://www.instagram.com/yurumachi_nagaoka?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-105 transition-transform duration-200"
+              >
+                <Image
+                  src="/contact/contact-button.png"
+                  alt="お問い合わせボタン"
+                  width={400}
+                  height={100}
+                  className="mx-auto"
+                />
+              </a>
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="border-t py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-4">
-              <div className="flex items-center space-x-1 sm:space-x-2">
-                <div className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 rounded-full border"></div>
-                <span className="font-bold text-xs sm:text-sm md:text-base lg:text-lg">まちナかぬんかさい 2025</span>
-              </div>
-            </div>
-          </div>
-        </footer>
       </main>
 
       <button
