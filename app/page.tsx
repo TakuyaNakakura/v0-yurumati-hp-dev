@@ -449,70 +449,54 @@ export default function FestivalWireframe() {
           </div>
         </section>
 
+        {/* This Year Theme Section */}
+        <section id="this-year-theme" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/this-year-theme/theme-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/this-year-theme/theme-bg.png" 
+              alt="This Year Theme Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  {/* <h2 className="text-white text-4xl md:text-6xl font-bold mb-8">今年のテーマ</h2> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Program Section */}
-        <section id="program" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">プログラム</h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">16:00 - 18:00</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">オープニング</span>
-                      <p className="text-xs sm:text-sm md:text-base">会場オープン・マルシェ開始</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">18:00 - 19:30</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">メインイベント</span>
-                      <p className="text-xs sm:text-sm md:text-base">ゲリラお笑いライブ・パフォーマンス</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">19:30 - 21:00</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="space-y-2 sm:space-y-3">
-                      <span className="inline-block border px-2 py-1 rounded text-xs sm:text-sm md:text-base">ナイトイベント</span>
-                      <p className="text-xs sm:text-sm md:text-base">ディスコパーティー・同窓会</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border rounded">
-                  <div className="p-3 sm:p-4 md:p-6 border-b">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <MapPin className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-                      <span className="text-xs sm:text-sm md:text-base lg:text-lg">会場図</span>
-                    </div>
-                  </div>
-                  <div className="p-3 sm:p-4 md:p-6">
-                    <div className="aspect-video border rounded flex items-center justify-center">
-                      <p className="text-xs sm:text-sm md:text-base">[Venue Map Placeholder]</p>
-                    </div>
-                  </div>
+        <section id="program" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/program/program-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/program/program-bg.png" 
+              alt="Program Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  {/* プログラム内容をここに追加する予定 */}
                 </div>
               </div>
             </div>
@@ -520,24 +504,27 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">ご協賛いただいた企業様</h2>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8">
-                {["ソリマチ技研", "ソリマチ株式会社", "拍露酒造", "お福酒造"].map((sponsor, index) => (
-                  <div key={index} className="border rounded p-2 sm:p-3 md:p-4 lg:p-6">
-                    <div className="aspect-square border rounded flex items-center justify-center mb-1 sm:mb-2 md:mb-3 lg:mb-4">
-                      <div className="text-xs sm:text-sm text-center">
-                        [Logo
-                        <br />
-                        Placeholder]
-                      </div>
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-base font-medium leading-tight">{sponsor}</p>
-                  </div>
-                ))}
+        <section id="sponsors" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/sponsors/sponsors-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/sponsors/sponsors-bg.png" 
+              alt="Sponsors Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  {/* スポンサー内容をここに追加する予定 */}
+                </div>
               </div>
             </div>
           </div>
@@ -546,53 +533,42 @@ export default function FestivalWireframe() {
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">お問い合わせ</h2>
-
-              <div className="border rounded p-3 sm:p-4 md:p-6 lg:p-8">
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl">イベントに関するご質問やお問い合わせは、こちらからお気軽にどうぞ。</p>
-
-                  <button className="border px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded text-sm sm:text-base md:text-lg lg:text-xl w-full hover:bg-gray-100 transition-colors">
-                    お問い合わせページへ
-                  </button>
-
-                  <div className="pt-3 sm:pt-4 md:pt-6 border-t">
-                    <p className="text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4">SNSでも情報を発信しています！</p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 md:gap-4">
-                      <button className="border px-3 sm:px-4 py-2 rounded text-xs sm:text-sm md:text-base lg:text-lg hover:bg-gray-100 transition-colors">
-                        Instagram
-                      </button>
-                      <button className="border px-3 sm:px-4 py-2 rounded text-xs sm:text-sm md:text-base lg:text-lg hover:bg-gray-100 transition-colors">
-                        Twitter
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-full max-w-lg h-20 relative mx-auto mb-8 sm:mb-12 md:mb-16">
+                <div className="w-full h-20 left-0 top-0 absolute flex justify-center items-center text-white text-4xl md:text-5xl lg:text-6xl font-semibold font-['Source_Serif_Pro'] whitespace-nowrap">お問い合わせ</div>
               </div>
+
+              <a 
+                href="https://www.instagram.com/yurumachi_nagaoka?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-105 transition-transform duration-200"
+              >
+                <Image
+                  src="/contact/contact-button.png"
+                  alt="お問い合わせボタン"
+                  width={400}
+                  height={100}
+                  className="mx-auto"
+                />
+              </a>
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="border-t py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-4">
-              <div className="flex items-center space-x-1 sm:space-x-2">
-                <div className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 rounded-full border"></div>
-                <span className="font-bold text-xs sm:text-sm md:text-base lg:text-lg">まちナかぬんかさい 2025</span>
-              </div>
-            </div>
-          </div>
-        </footer>
       </main>
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-5 md:right-5 lg:bottom-6 lg:right-6 z-40 rounded-full border h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex items-center justify-center bg-white/90 backdrop-blur-sm hover:bg-white transition-colors shadow-lg"
+        className="fixed bottom-8 z-40 hover:scale-105 transition-transform duration-200 left-1/2 lg:left-[calc(50%+194.5px)] transform -translate-x-1/2"
         aria-label="ページトップへ"
       >
-        <ArrowUp className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+        <Image
+          src="/page-top-button/page-top-button.png"
+          alt="ページトップへ"
+          width={128}
+          height={128}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
+        />
       </button>
     </div>
   )
