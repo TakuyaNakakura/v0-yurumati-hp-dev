@@ -547,24 +547,27 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-          <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2">ご協賛いただいた企業様</h2>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8">
-                {["ソリマチ技研", "ソリマチ株式会社", "拍露酒造", "お福酒造"].map((sponsor, index) => (
-                  <div key={index} className="border rounded p-2 sm:p-3 md:p-4 lg:p-6">
-                    <div className="aspect-square border rounded flex items-center justify-center mb-1 sm:mb-2 md:mb-3 lg:mb-4">
-                      <div className="text-xs sm:text-sm text-center">
-                        [Logo
-                        <br />
-                        Placeholder]
-                      </div>
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-base font-medium leading-tight">{sponsor}</p>
-                  </div>
-                ))}
+        <section id="sponsors" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+          <div 
+            className="w-full bg-cover bg-center bg-no-repeat relative"
+            style={{ 
+              backgroundImage: "url('/sponsors/sponsors-bg.png')",
+              backgroundSize: '80%',
+              minHeight: '600px'
+            }}
+          >
+            <img 
+              src="/sponsors/sponsors-bg.png" 
+              alt="Sponsors Background" 
+              className="w-full h-auto opacity-0 pointer-events-none" 
+              style={{ display: 'block', transform: 'scale(0.8)' }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center py-20">
+              <div className="w-[80%] max-w-none mx-auto px-4">
+                {/* コンテンツをここに追加 */}
+                <div className="text-center">
+                  {/* スポンサー内容をここに追加する予定 */}
+                </div>
               </div>
             </div>
           </div>
