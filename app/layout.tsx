@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   creator: 'ゆるまち実行委員会',
   publisher: 'ゆるまち実行委員会',
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
@@ -19,6 +24,14 @@ export const metadata: Metadata = {
     title: 'ゆるまち｜まちなか文化祭',
     description: 'ゆるまちは地域の皆さんが気軽に参加できるまちなか文化祭です。音楽、グルメ、アート、ワークショップなど多彩なコンテンツで地域コミュニティを盛り上げます。',
     siteName: 'ゆるまち',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ゆるまち - まちなか文化祭',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,8 +54,8 @@ export default function RootLayout({
     '@type': 'Event',
     name: 'ゆるまち - まちナかぶんかさい',
     description: 'ゆるまちは地域の皆さんが気軽に参加できるまちなか文化祭です。音楽、グルメ、アート、ワークショップなど多彩なコンテンツで地域コミュニティを盛り上げます。',
-    startDate: '2025-07-01', // 実際の開催日に更新してください
-    endDate: '2025-07-01',   // 実際の開催日に更新してください
+    startDate: '2025-09-27', // 実際の開催日に更新してください
+    endDate: '2025-09-27',   // 実際の開催日に更新してください
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
