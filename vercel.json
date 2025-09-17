@@ -1,0 +1,5 @@
+{
+    "redirects": [
+        { "source": "/", "destination": "https://yurumati.vercel.app/", "permanent": true }
+    ]
+}
