@@ -163,7 +163,7 @@ export default function FestivalWireframe() {
   }, [sidebarOpen])
 
   return (
-    <div className="min-h-screen flex relative">
+    <div className="min-h-screen flex relative overflow-x-hidden">
       {/* Mobile Menu Button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
