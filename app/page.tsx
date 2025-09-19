@@ -27,15 +27,16 @@ const AboutCarousel = () => {
 
   return (
     <div className="relative w-full mx-auto">
-      {/* テキスト部分 */}
-      <div className="text-center mb-32 mt-48 mx-4">
-        <div className="text-white text-3xl font-normal font-['Source_Serif_Pro'] leading-relaxed">
+      {/* テキスト部分 - フォントサイズを小さく調整 */}
+      <div className="text-center mb-16 mt-24 mx-4">
+        <div className="text-white text-lg sm:text-xl md:text-2xl font-normal font-['Source_Serif_Pro'] leading-relaxed">
           『まちナかぶんかさい』は、<br/>
           毎年夏に、長岡市の大学生が主体となって開催されるイベントです。<br/>
         </div>
       </div>
       
-      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl shadow-2xl">
+      {/* カルーセルサイズを小さく調整 */}
+      <div className="relative w-full max-w-3xl mx-auto aspect-[16/10] overflow-hidden rounded-xl shadow-2xl">
         {carouselImages.map((image, index) => (
           <div
             key={index}
@@ -55,13 +56,13 @@ const AboutCarousel = () => {
         ))}
       </div>
       
-      {/* インジケーター */}
-      <div className="flex justify-center mt-8 space-x-4">
+      {/* インジケーター - サイズを小さく調整 */}
+      <div className="flex justify-center mt-4 space-x-2">
         {carouselImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-6 h-6 rounded-full transition-all duration-300 ${
+            className={`w-4 h-4 rounded-full transition-all duration-300 ${
               index === currentSlide 
                 ? 'bg-white scale-125 shadow-lg' 
                 : 'bg-white/60 hover:bg-white/80'
@@ -108,6 +109,14 @@ export default function FestivalWireframe() {
   }
 
   const getEventScheduleHeight = () => {
+    if (windowWidth < 640) return '500px'
+    if (windowWidth < 768) return '600px'
+    if (windowWidth < 1024) return '700px'
+    if (windowWidth < 1280) return '800px'
+    return '900px'
+  }
+
+  const getAboutHeight = () => {
     if (windowWidth < 640) return '500px'
     if (windowWidth < 768) return '600px'
     if (windowWidth < 1024) return '700px'
@@ -642,22 +651,101 @@ export default function FestivalWireframe() {
         {/* About Section */}
         <section id="about" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
           <div 
-            className="w-full bg-cover bg-center bg-no-repeat relative"
+            className="w-full relative"
             style={{ 
-              backgroundImage: "url('/about/about-bg.png')",
-              backgroundSize: '80%',
-              minHeight: '600px'
+              minHeight: getAboutHeight()
             }}
           >
-            <img 
-              src="/about/about-bg.png" 
-              alt="About Background" 
-              className="w-full h-auto opacity-0 pointer-events-none" 
-              style={{ display: 'block', transform: 'scale(0.8)' }}
+            {/* キャラクターを頂点とした四角形フレーム - レスポンシブ対応 */}
+            <div 
+              className="absolute rounded-[12px] sm:rounded-[16px] md:rounded-[20px] outline outline-[3px] sm:outline-[4px] md:outline-[5px] outline-offset-[-3px] sm:outline-offset-[-4px] md:outline-offset-[-5px] outline-black/20"
+              style={{
+                left: '5%',
+                top: '6%',
+                right: '5%',
+                bottom: '2%',
+                zIndex: 1
+              }}
             />
-            <div className="absolute inset-0 flex items-center justify-center py-20">
-              <div className="w-[80%] max-w-none mx-auto px-4">
-                <AboutCarousel />
+
+            {/* 上部中央 - about-character - モバイル・デスクトップ分離対応 */}
+            <div 
+              className="absolute"
+              style={{
+                left: '50%',
+                top: '-25%', // モバイル用位置
+                width: '40%', // モバイル用サイズ
+                height: '50%', // モバイル用サイズ
+                transform: 'translateX(-50%)',
+                zIndex: 3
+              }}
+            >
+              <Image
+                src="/about/about-character.png"
+                alt="About Character"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="sm:hidden" // モバイル版のみ表示
+              />
+            </div>
+
+            {/* デスクトップ版 about-character */}
+            <div 
+              className="absolute hidden sm:block"
+              style={{
+                left: '50%',
+                top: '-30%', // デスクトップ用位置
+                width: '40%', // デスクトップ用サイズ
+                height: '50%', // デスクトップ用サイズ
+                transform: 'translateX(-50%)',
+                zIndex: 3
+              }}
+            >
+              <Image
+                src="/about/about-character.png"
+                alt="About Character"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+
+            {/* 枠内コンテンツ管理用div */}
+            <div className="absolute"
+              style={{
+                left: '8%',
+                right: '8%',
+                top: '-6%',
+                bottom: '6%',
+                zIndex: 3
+              }}
+            >
+              {/* コンテンツコンテナ */}
+              <div className="relative w-full h-full">
+                
+                {/* モバイル用コンテンツ */}
+                <div className="absolute w-full sm:hidden"
+                  style={{
+                    top: '5%',
+                    left: '0%'
+                  }}
+                >
+                  <div className="px-4 max-w-6xl mx-auto">
+                    <AboutCarousel />
+                  </div>
+                </div>
+                
+                {/* タブレット・デスクトップ用コンテンツ */}
+                <div className="absolute w-full hidden sm:block"
+                  style={{
+                    top: '10%',
+                    left: '0%'
+                  }}
+                >
+                  <div className="px-8 max-w-6xl mx-auto">
+                    <AboutCarousel />
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
