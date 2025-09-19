@@ -833,11 +833,11 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b">
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-40 sm:mb-32 md:mb-40 lg:mb-48">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-full max-w-lg h-20 relative mx-auto mb-8 sm:mb-12 md:mb-16">
-                <div className="w-full h-20 left-0 top-0 absolute flex justify-center items-center text-white text-4xl md:text-5xl lg:text-6xl font-semibold font-['Source_Serif_Pro'] whitespace-nowrap">お問い合わせ</div>
+              <div className="w-full max-w-lg h-20 relative mx-auto mb-6 sm:mb-10 md:mb-14">
+                <div className="w-full h-20 left-0 top-0 absolute flex justify-center items-center text-white text-3xl md:text-4xl lg:text-5xl font-semibold font-['Source_Serif_Pro'] whitespace-nowrap">お問い合わせ</div>
               </div>
 
               <a 
