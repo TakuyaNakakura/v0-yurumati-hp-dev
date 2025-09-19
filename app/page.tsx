@@ -725,7 +725,7 @@ export default function FestivalWireframe() {
                 {/* モバイル用コンテンツ */}
                 <div className="absolute w-full sm:hidden"
                   style={{
-                    top: '5%',
+                    top: '3%',
                     left: '0%'
                   }}
                 >
@@ -752,7 +752,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* This Year Theme Section */}
-        <section id="this-year-theme" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+        <section id="this-year-theme" className="relative mb-12 sm:mb-6 md:mb-20 lg:mb-32 xl:mb-40">
           <div 
             className="w-full bg-cover bg-center bg-no-repeat relative"
             style={{ 
@@ -851,7 +851,7 @@ export default function FestivalWireframe() {
                   alt="お問い合わせボタン"
                   width={400}
                   height={100}
-                  className="mx-auto"
+                  className="mx-auto w-64 h-16 sm:w-80 sm:h-20 md:w-96 md:h-24 lg:w-[400px] lg:h-[100px]"
                 />
               </a>
             </div>
