@@ -109,7 +109,7 @@ export default function FestivalWireframe() {
   }
 
   const getEventScheduleHeight = () => {
-    if (windowWidth < 640) return '500px'
+    if (windowWidth < 640) return '700px' // モバイル版を縦長に調整
     if (windowWidth < 768) return '600px'
     if (windowWidth < 1024) return '700px'
     if (windowWidth < 1280) return '800px'
@@ -117,7 +117,7 @@ export default function FestivalWireframe() {
   }
 
   const getAboutHeight = () => {
-    if (windowWidth < 640) return '500px'
+    if (windowWidth < 640) return '550px'
     if (windowWidth < 768) return '600px'
     if (windowWidth < 1024) return '700px'
     if (windowWidth < 1280) return '800px'
@@ -457,7 +457,7 @@ export default function FestivalWireframe() {
                 <div className="absolute text-white text-lg font-semibold font-['Source_Serif_Pro'] sm:hidden"
                   style={{
                     left: '40%',
-                    top: '1%',
+                    top: '3%',
                     transform: 'translateX(-50%)'
                   }}
                 >
@@ -479,7 +479,7 @@ export default function FestivalWireframe() {
                 <div className="absolute flex justify-center items-baseline gap-1 sm:hidden"
                   style={{
                     left: '50%',
-                    top: '8%',
+                    top: '10%',
                     transform: 'translateX(-50%)'
                   }}
                 >
@@ -507,7 +507,7 @@ export default function FestivalWireframe() {
                 <div className="absolute flex justify-center items-center gap-2 sm:hidden"
                   style={{
                     left: '50%',
-                    top: '18%',
+                    top: '20%',
                     transform: 'translateX(-50%)'
                   }}
                 >
@@ -532,14 +532,14 @@ export default function FestivalWireframe() {
                 {/* 会場図と説明の2段組 - モバイル */}
                 <div className="absolute w-full sm:hidden"
                   style={{
-                    top: '28%',
+                    top: '32%',
                     left: '0%'
                   }}
                 >
                   <div className="grid grid-cols-1 gap-3 text-white px-2 max-w-6xl mx-auto justify-center">
                     {/* 左列 - 会場図 */}
                     <div className="rounded-lg p-1">
-                      <div className="w-2/6 mx-auto mb-1">
+                      <div className="w-5/6 mx-auto mb-1">
                         <div className="flex items-center gap-1 text-xs font-semibold font-['Noto_Sans_JP']">
                           <div className="relative w-3 h-3">
                             <Image 
@@ -552,7 +552,7 @@ export default function FestivalWireframe() {
                           大光銀行駐車場
                         </div>
                       </div>
-                      <div className="w-2/6 mx-auto rounded border-2 border-white/30 overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                      <div className="w-5/6 mx-auto rounded border-2 border-white/30 overflow-hidden" style={{ aspectRatio: '4/3' }}>
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.8856372488855!2d138.85023816506157!3d37.44791003439853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff5a9fd5bbd7f6f%3A0xb4df88b4991737b9!2z5b6T5qWt5ZOh5bCC55So6aeQ6LuK5aC077yI5aSn5YWJ6YqA6KGMIOacrOW6l--8iQ!5e0!3m2!1sja!2sjp!4v1757573290175!5m2!1sja!2sjp"
                           width="100%"
