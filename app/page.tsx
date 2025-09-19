@@ -757,7 +757,7 @@ export default function FestivalWireframe() {
             className="w-full bg-cover bg-center bg-no-repeat relative"
             style={{ 
               backgroundImage: "url('/this-year-theme/theme-bg.png')",
-              backgroundSize: '80%',
+              backgroundSize: '90%',
               minHeight: '600px'
             }}
           >
