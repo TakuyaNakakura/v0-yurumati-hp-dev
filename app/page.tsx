@@ -649,7 +649,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+        <section id="about" className="relative">
           <div 
             className="w-full relative"
             style={{ 
@@ -752,7 +752,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* This Year Theme Section */}
-        <section id="this-year-theme" className="relative mb-12 sm:mb-6 md:mb-20 lg:mb-32 xl:mb-40">
+        <section id="this-year-theme" className="relative">
           <div 
             className="w-full bg-cover bg-center bg-no-repeat relative"
             style={{ 
@@ -779,7 +779,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Program Section */}
-        <section id="program" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+        <section id="program" className="relative">
           <div 
             className="w-full bg-cover bg-center bg-no-repeat relative"
             style={{ 
@@ -806,7 +806,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors" className="relative mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40">
+        <section id="sponsors" className="relative">
           <div 
             className="w-full bg-cover bg-center bg-no-repeat relative"
             style={{ 
@@ -833,7 +833,7 @@ export default function FestivalWireframe() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 border-b">
           <div className="container px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
               <div className="w-full max-w-lg h-20 relative mx-auto mb-8 sm:mb-12 md:mb-16">
